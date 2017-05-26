@@ -25,7 +25,6 @@ if($_GET['edit']!=null)
 else
 {
     $edit_file->edit($_GET['file_name']);
-
 }
 
 $edit_file->edit_save($_GET['file_name'],$_GET['file_text']);
