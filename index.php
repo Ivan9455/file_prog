@@ -2,22 +2,30 @@
 <html >
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Title</title>
 </head>
 <body>
 <?php
 require 'class/file.php';
 $file = new file();
-echo "<pre>";
-print_r($file->file_location());
-echo "</pre>";
+$file->file_location();
 
-$submit = new test();
-echo $submit->submit($_POST['klick']);
-//echo $_GET['klick'];
+
 ?>
-<form action="" method="post">
-    <input type="submit"  name="klick" value=" 123">
+<form action="file_func.php" >
+    <table>
+        <tr>
+            <td>№</td>
+            <td>Имя файла</td>
+            <td colspan="2">Действия</td>
+            <?php
+
+            $file->table();
+
+            ?>
+        </tr>
+    </table>
 </form>
 </body>
 </html>
