@@ -7,3 +7,9 @@ table ,tr ,td
     border:2px solid black;
 
 }
+div.form
+{
+    text-align: center;
+    display: table;
+    margin: 0px auto;
+}

@@ -3,7 +3,7 @@ require 'class/file.php';
 
 $open_file = new open_file();
 $edit_file = new edit_file();
-
+$delet_file = new delet_file();
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,7 +28,7 @@ else
 }
 
 $edit_file->edit_save($_GET['file_name'],$_GET['file_text']);
-
+$delet_file->deleted($_GET['delet']);
 
 ?>
 </body>

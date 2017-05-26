@@ -36,6 +36,8 @@ class file
             echo "<button type='submit' name='open' value= " . $this->file_location[$this->i] . "   >Открыть</button>";
             echo "</td><td>";
             echo "<button type='submit' name='edit' value= " . $this->file_location[$this->i] . "   >Редактировать</button>";
+            echo "</td><td>";
+            echo "<button type='submit' name='delet' value= " . $this->file_location[$this->i] . "   >Удалить</button>";
             echo "</td></tr>";
         }
     }
@@ -95,5 +97,31 @@ class edit_file extends file
 
 class delet_file extends file
 {
-
+    public function deleted($file_name=null)
+    {
+        if($file_name!=null)
+        {
+            @unlink($this->file . $file_name);
+            echo "Файл " . $file_name . " удален. <br>";
+            echo "Вернитесь на галвную страницу<br>";
+            echo "<a href='index.php'>Назад</a>";
+        }
+    }
+}
+class new_file extends file
+{
+    private $file_new;
+    public function new_file($file_name=null,$file_text=null)
+    {
+        if($file_name!=null)
+        {
+            $this->file_new = fopen($this->file . $file_name, "w+");
+            flock($this->file_new,LOCK_EX);
+            fwrite($this->file_new,$file_text);
+            flock($this->file_new,LOCK_UN);
+            fclose($this->file_new);
+            echo  "Создан новый файл " . file_name  . "<br>";
+            echo "<a href='index.php'>Назад</a>";
+        }
+    }
 }

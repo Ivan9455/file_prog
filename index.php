@@ -13,12 +13,17 @@ $file->file_location();
 
 
 ?>
+<div class="form">
+<form action="new_file.php">
+    <button type="submit" >Создать файл</button>
+</form>
+
 <form action="file_func.php" >
     <table>
         <tr>
             <td>№</td>
             <td>Имя файла</td>
-            <td colspan="2">Действия</td>
+            <td colspan="3">Действия</td>
             <?php
 
             $file->table();
@@ -27,5 +32,6 @@ $file->file_location();
         </tr>
     </table>
 </form>
+</div>
 </body>
 </html>
