@@ -15,7 +15,7 @@ $delet_file = new delet_file();
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Document</title>
 </head>
-<body >
+<body>
 <?php
 $open_file->open($_GET['open']);
 if($_GET['edit']!=null)
