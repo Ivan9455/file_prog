@@ -73,7 +73,7 @@ class edit_file extends file
             echo "Имя файла<br>";
             echo "<form>";
             echo "<input type='text' name='file_name' value=" . $file_name . "><br>";
-            echo "Текст файла<br>";
+            echo "Текст файла  <br>";
             echo "<textarea name='file_text' cols='30' rows='15'>";
             echo readfile($this->file . $file_name);
             echo "</textarea><br>";
