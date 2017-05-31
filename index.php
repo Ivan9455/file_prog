@@ -10,8 +10,9 @@
 require 'class/file.php';
 $file = new file();
 $file->file_location();
-
-
+echo "<pre>";
+print_r($file);
+echo "</pre>";
 ?>
 <div class="form">
 <form action="new_file.php">
